@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        */ {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        form>div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            width: 150px;
+            margin-right: 10px;
+        }
+
+        .container button {
+            width: 100px;
+            height: 30px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <h1>Danh sách học viên</h1>
+        <table id="studentTable">
+                <tr>
+                    <th>Họ và Tên</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Quê Quán</th>
+                    <th>Giới tính</th>
+                </tr>
+        </table>
+    </div> -->
+    <div class="container">
+        <h1>Quản Lý Học Viên</h1>
+
+        <h2>Thông tin học viên</h2>
+        <form id="studentForm">
+            <div>
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" required><br>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+            </div>
+            <div>
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" required pattern="[0-9]{10}"><br>
+            </div>
+            <div>
+                <label for="address">Quê quán:</label>
+                <input type="text" id="address" required><br>
+            </div>
+            <div>
+                <label for="gender" id="gender">Giới tính:</label>
+                <input type="radio" name="gender" id="nam" value="nam" selected> Nam
+                <input type="radio" name="gender" id="nu" value="nu"> Nữ
+            </div>
+
+
+            <button type="submit" onclick="saveStudent()">Lưu lại</button>
+
+        </form>
+    </div>
+
+
+    <h2>Danh sách học viên</h2>
+    <input type="text" id="search" placeholder="Tìm kiếm theo tên học viên">
+    <button onclick="searchStudent()">Search</button>
+    <table id="studentTable" border="1">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Email</th>
+                <th>Số điện thoại</th>
+                <th>Quê quán</th>
+                <th>Giới tính</th>
+                <th colspan="2">Action</th>
+                <th><button onclick="sortStudent()">sắp xếp (alpha b)</button></th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button>update</button></td>
+                <td><button onclick="deleteStudent()">delete</button></td>
+                <td></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <script src="./btNC.js"></script>
+</body>
+
+</html>
